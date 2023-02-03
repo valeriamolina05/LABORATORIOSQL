@@ -107,3 +107,13 @@ select automarca, autoplaca, automodelo, autocilindraje, asefechainicio, asefech
 from aseguramientos, automotores
 where autoplaca= aseplaca and asecodigo=1;
 
+Select *
+from aseguramientos ase
+inner join incidentes inc
+on ase.asecodigo= inc.incicodigo;
+
+Select *
+from automotores aut
+inner join aseguramientos ase
+on aut.autoplaca=ase.aseplaca;
+

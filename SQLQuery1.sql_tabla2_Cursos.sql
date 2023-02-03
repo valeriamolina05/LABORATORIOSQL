@@ -1,4 +1,5 @@
 create database lab2
+use lab2
 create table Profesor(
 	doc_prof int primary key not null,
 	nom_prof varchar(30) not null,
@@ -83,3 +84,14 @@ where sal_prof in(select min(sal_prof) from profesor);
 
 select * from profesor
 where sal_prof >500000 and sal_prof<700000;
+
+
+select *
+from curso cr
+inner join Estudiantexcurso est
+on cr.cod_curs= est.cod_cur_estcur;
+
+select *
+from Estudiante est
+inner join Estudiantexcurso estx
+on est.doc_est= estx.doc_est_estcur;

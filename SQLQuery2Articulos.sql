@@ -1,4 +1,5 @@
 create database lab1
+use lab1
 create table cliente(
 	id_cli int primary key,
 	nom_cli varchar(30),
@@ -86,3 +87,24 @@ from articulo order by aut_art;
 
 select  nom_cli, dir_cli, id_ped, can_art_artped
 from cliente, pedido, Artículoxpedido, articulo where id_ped=id_ped and id_cli_ped=id_cli and id_ped=2;
+
+
+Select *
+from articulo art
+inner join Artículoxpedido artx
+on art.id_art= artx.id_art_artped;
+
+select *
+from cliente cl
+inner join pedido ped
+on cl.id_cli= ped.id_cli_ped;
+
+Select *
+from pedido ped
+inner join Artículoxpedido artx
+on ped.id_ped= artx.id_ped_artped;
+
+Select *
+from articulo art
+inner join Artículoxpedido artx
+on art.prec_art= artx.val_ven_art_artped;
